@@ -1,5 +1,5 @@
 # howToJS
-ebobaniy vash JS blyat'
+ebobaniy vash JS blyatsadsadas'
 
 
 Kak polzovat'sya etim vashim githabom
