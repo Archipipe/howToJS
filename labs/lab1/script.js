@@ -50,3 +50,17 @@ window.onload =function() {
 }
 
 }
+// Мой аналог
+
+function test(task,correctAnswer,currentScore){
+    return (confirm(task) == correctAnswer && currentScore++,currentScore);
+}
+function lab() {
+    var score = 0;
+    score = test("Тег <font> может содержать в себе атрибут size?",true,score);
+    score = test("Данная строка изменит размер внутри тега <p>? \n <p style=font-stretch:12px >text</p>",false,score);
+    score = test("Тег <big> нужно закрывать?",true,score);
+    score = test("Данная строка изменит размер внутри тега <p>? \n <p style=font-size:12px >text</p>",true,score);
+    
+    alert("Фамилия: "+sName+"\nГруппа: "+group+"\nРезультат: "+score);
+}
