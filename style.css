@@ -14,3 +14,6 @@ table{color:#839496;}
     width: max-content;
     max-width: 900px;
 }
+a:link {color: #848484;text-decoration: none;}
+a:visited {color: #848484;}
+a:hover {color: white;}
