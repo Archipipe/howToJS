@@ -50,6 +50,7 @@ window.onload =function() {
 }
 
 }
+
 // Мой аналог
 
 function test(task,correctAnswer,currentScore){
