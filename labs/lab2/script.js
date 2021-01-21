@@ -24,6 +24,7 @@ window.onload = () =>{
     for (let key of assoc.keys()){
         keysas.push(key)
     }
+    mass = mass.join()
 
     let itog = []
     itog.push(mass)
