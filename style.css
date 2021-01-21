@@ -11,8 +11,8 @@ table{color:#839496;}
     padding: 10px;
     font-size: 20px;
     color:#839496;
-    width: max-content;
-    max-width: 900px;
+    width: 100%;
+    max-width: 800px;
 }
 a:link {color: #848484;text-decoration: none;}
 a:visited {color: #848484;}
