@@ -12,7 +12,7 @@ window.onload = () =>{
         block.style.backgroundColor ="blue"; 
     }
 
-    body.onclick = (event)=>{
+    body.onmouseover = (event)=>{
         if (event.target.className == 'block'){
             block.style.backgroundColor ="red"; 
         }
