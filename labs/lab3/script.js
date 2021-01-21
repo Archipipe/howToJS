@@ -1,3 +1,6 @@
+function YaRotEbalEtoyFunkcii(El){
+    El.style.backgroundColor ="red"; 
+}
 window.onload = () =>{
     let body = document.querySelector("body");
     let block = document.querySelector('.block');
@@ -15,9 +18,6 @@ window.onload = () =>{
         }
     };
     
-    function YaRotEbalEtoyFunkcii(El){
-        El.style.backgroundColor ="red"; 
-    }
 
     min2.addEventListener('click', () =>{
         min2.style.backgroundColor ="red"; 
