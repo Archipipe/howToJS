@@ -45,8 +45,8 @@ window.onload = () =>{
             ashka[i].style.backgroundColor ="red"; 
         }
     }
-
-
+    // аналог
+    //document.querySelectorAll("a").forEach(e => {e.oncontextmenu = el =>{el.style.backgroundColor ="red"})
 }
 
 
