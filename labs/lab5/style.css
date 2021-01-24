@@ -1,5 +1,7 @@
 body{
     display: flex;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .sloy1,.sloy2,.sloy3{
@@ -14,21 +16,31 @@ body{
     background-color: blue; 
     margin-top: 20px;
     margin-left: 20px;
+    z-index: 1;
 }
 
 .sloy2{
     background-color: red;
     margin-top: 10px;
     margin-left: 10px;
+    z-index: 2;
 }
 
 .sloy1{
     background-color: yellow;
+    z-index: 3;
 }
 
 .text{
-    font-weight: 700;
+    width: 800px;
+    position: absolute;
+    right: 0px;
     font-size: 18px;
     display: flex;
     justify-content: space-around;
+}
+
+.comm,.help{
+    width: 40%;
+    text-align: center;
 }
