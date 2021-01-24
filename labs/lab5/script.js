@@ -1,5 +1,8 @@
 window.onload = () =>{
-    let a = 1
+    let a1 = -1
+    let a2 = -1
+    let a3 = -1
+    let a = []
     sloy1 = document.querySelector('.sloy1')
     sloy2 = document.querySelector('.sloy2')
     sloy3 = document.querySelector('.sloy3')
@@ -7,42 +10,38 @@ window.onload = () =>{
     text = document.querySelector(".text")
     body = document.querySelector('body')
 
-    document.onkeydown = (e) => {
-        if (e.code == "KeyW"){
-            a = a * -1
-            console.log(a)
-        } 
-        if (a == -1){
-            if (e.code == "Digit1"){
-                sloy1.style.display = "none"
+    document.onkeydown = (event) =>{
+        a.push(event.code)
+        if(a[0] == "KeyW" && a[1] == "Digit1"){
+            a1 *= -1
+            if (a1 == 1){
+                sloy1.style.display = 'none'
+                a.length = 0
             }
-            if (e.code == "Digit2"){
-                sloy2.style.display = "none"
-            }
-            if (e.code == "Digit3"){
-                sloy3.style.display = "none"
-            }
+            
         }
-    }
 
-    document.onkeyup = (e) => {
-        if (e.code == "KeyW"){
-            a = a * -1
-            console.log(a)
-        }  
-        
-        if(a == 1){
-            document.onkeyup = (e) =>{
-                if (e.code == "Digit1"){
-                    sloy1.style.display = "block"
-                }
-                if (e.code == "Digit2"){
-                    sloy2.style.display = "block"
-                }
-                if (e.code == "Digit3"){
-                    sloy3.style.display = "block"
-                }
+        if(a[0] == "KeyW" && a[1] == "Digit2"){
+            a2 *= -1
+            if (a1 == 1){
+                sloy2.style.display = 'none'
+                a.length = 0
             }
+            
+        }
+
+        if(a[0] == "KeyW" && a[1] == "Digit3"){
+            a3 *= -1
+            if (a1 == 1){
+                sloy3.style.display = 'none'
+                a.length = 0
+            }
+            
+        }
+
+        if (event.code =="KeyP"){
+            console.log(a)
+            a.length = 0
         }
     }
 
