@@ -1,6 +1,7 @@
 window.onload = () =>{
     let a1 = -1
     let a = []
+    kart = document.querySelector('.kartochki')
     sloy1 = document.querySelector('.sloy1')
     sloy2 = document.querySelector('.sloy2')
     sloy3 = document.querySelector('.sloy3')
@@ -34,6 +35,26 @@ window.onload = () =>{
             
         }
 
+        if(a[0] == "KeyW" && a[1] == "Digit4"){
+            a1 *= -1
+            if (a1==-1){
+                kart.style.display = "block"
+                sloy1.style.display = 'none'
+                sloy2.style.display = 'none'
+                sloy3.style.display = 'none'
+                a.length = 0
+            }
+
+            if (a1==1){
+                kart.style.display = "none"
+                sloy1.style.display = 'block'
+                sloy2.style.display = 'block'
+                sloy3.style.display = 'block'
+                a.length = 0
+            }
+            
+        }
+
         if (event.shiftKey){
             comm.innerHTML = "Комментарий <br><br><br> Ты когда-нибудь нахуй видел, как выглядят зубы пингвина? Загугли, это пиздец."
             a.length = 0
@@ -50,16 +71,9 @@ window.onload = () =>{
             a.length = 0
         }
 
-        if (a.length == 3){
-            a.length = 0
-        }
-
-        if (event.code == "KeyZ"){
-            console.log(a)
-            a.length = 0
-        }
-
-        
+        if(a.length == 2 && a[0] != "KeyW"){
+            a.length =0
+        }  
     }
 
 }

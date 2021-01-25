@@ -2,6 +2,7 @@ body{
     display: flex;
     position: relative;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 .sloy1,.sloy2,.sloy3{
@@ -29,6 +30,14 @@ body{
 .sloy1{
     background-color: yellow;
     z-index: 3;
+}
+
+.kartochki{
+    margin: 300px auto; 
+}
+.kartochki img{
+    margin: 20px;
+    border-radius: 40px;
 }
 
 .text{
