@@ -1,0 +1,13 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #696969;
+    display: flex;
+    justify-content: center;
+}
+
+.pososi{
+    margin-top: 40vmin;
+    display: inline-block;
+    font-size: 40px;
+    color: #6b6b6b
+}
