@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #e98f29;
+    background: linear-gradient(to right,#3ea0ca, #468296, #34515e);
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.vvod{
+    position: relative;
+    padding: 15px;
+    margin: 30px 20px 20px;
+    width: 500px;
+    height: 250px;
+    border: 1px solid black;
+    text-align: center;
+    color: #e98f29;
+    border-radius: 20px;
+}
+
+.textnad{
+    font-size: 22px;
+    position: absolute;
+    top: -28px;
+    left: 40%;
+}
+
+.vvod__item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.vvod__item input{
+    width: 300px;
+    margin: 5px auto 0;  
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.vvod__item input:focus{
+    outline: none;
+}
