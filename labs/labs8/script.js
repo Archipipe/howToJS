@@ -33,7 +33,7 @@ window.onload = () => {
     zk.onchange = () =>{
         text = zk.value.split(" ")
         viv_zk.innerHTML = `ЗК : ${text[0]}`
-        re = /^[ЗК]{2}\ \:\ [0-9]{1,}/gm
+        re = new RegExp("^[ЗК]{2}\ \:\ [0-9]{1,}","gm")
         result = re.exec(viv_zk.innerHTML)
         if (result == null){
             troubles.innerHTML = "Долбаёбка, что-то тут не так!"
