@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: space-around;
+}
+
+.texts,.images{
+    width: 40%;
+    border: 1px black solid;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.images__output{
+    display: flex;
+}
+
+.images__output *{
+    margin: 5px;
+}
