@@ -30,14 +30,20 @@ window.onload = () =>{
         if (file.name.match(isTXT) != null){
             reader.onload = function() {
                 result = reader.result
-                console.log(`Кол-во слов : ${result.match(/\S+/g).length}`)
-                console.log()
+                console.log(`Кол-во слов : ${result.match(/\w+/gmui).length}`)
+                console.log(`Все слова, начинающиеся на b или б : ${result.match(/\b[b|б]\w+\b/gmui).join()}`)
+                console.log(`Все слова, имеющие буквы з или b :${result.match(/\b\w*[з|b]\w*\b/gmu).join()}`)
+                console.log(`Весь текст заглавными буквами ${result.toUpperCase()}`)
+                console.log(`Первые 20 слов текста ${result.match(/^\W*(\w+\s){20}/gmui).join()}`)
+                console.log(`/--------------------------------------------------------/`)
             }
         }
 
         if (file.name.match(isHTML) != null){
             reader.onload = function() {
                 console.log(reader.result);
+                // console.log(result.match())
+                console.log(`/--------------------------------------------------------/`)
             }
         }
         
