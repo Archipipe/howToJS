@@ -1,0 +1,234 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.podbody{
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.knopki,.output{
+    width: 50%;
+}
+
+.knopki{
+    text-align: center;
+    height: 400px;
+    position: relative;
+}
+
+.buttons{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.vvod,.vivod{
+    cursor: pointer;
+    line-height: 40px;
+    vertical-align: middle;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.vvod{
+    background-color: #2ec408;
+    border: 2px solid #229905;
+    transition: background-color .2s linear;
+}
+
+.vvod2{
+    cursor: pointer;
+    line-height: 25px;
+    vertical-align: middle;
+    color: #fff;
+    width: 120px;
+    height: 30px;
+    background-color: #2ec408;
+    border: 2px solid #229905;
+    transition: background-color .2s linear;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.vvod2:hover{
+    background-color: #17e605;
+}
+.vvod:hover{
+    background-color: #17e605;
+}
+
+.vivod{
+    background-color: #c73653;
+    border: 2px solid #b33232;
+    transition: background-color .2s linear;
+}
+
+.vivod:hover{
+    background-color: #e43030;
+}
+
+.output{
+    display: flex;
+    flex-direction: column;
+}
+
+.user__output{
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    background-color: gray;
+}
+
+.user__title,.adm__output{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.user__text{
+    color: #fff;
+    font-size: 20px;
+    line-height: 60px;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.adm__output{
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+.NW{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 800px;
+    background-color: #fff;
+    border: 1px solid #000;
+    z-index: 3;
+    overflow: auto;
+    text-align: center;
+}
+
+.NW__a{
+    display: none;
+}
+
+  .form{
+    width: 400px;
+    margin: 0 auto;
+    }
+  .radio-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    border: 2px solid #0082fe;
+    border-radius: 6px;
+  }
+  .radio-container .radio-btn{
+    border-right: 2px solid #0082fe;
+    overflow: hidden;
+  }
+  .radio-container .radio-btn:last-child{
+    border-right: 0px;
+  }
+  .radio-container .radio-btn.nth-2{width: 50%;}
+  .radio-container .radio-btn.nth-3{width: 33.3333%;}
+  .radio-container .radio-btn.nth-4{width: 25%;}
+  .radio-container .radio-btn label{
+    background-color: transparent;
+    color: #000;
+    display: block;
+    padding: 6px 12px;
+    text-align: center;
+  }
+  .radio-container .radio-btn input{display: none;}
+  .radio-container .radio-btn input:checked + label{
+    background-color: #0082fe;
+    color: #fff;
+  }
+
+.NW__title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.pchel__title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.pchel__title2{
+    margin-top: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.pikchi{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 410px;
+    height: 410px;
+}
+
+
+.pic__item{
+    position: relative;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.pikcha{
+    width: 200px;
+    height: auto;
+}
+
+.pic__content{
+    background-color: rgba(232, 69, 69, .9);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity .15s linear;
+}
+
+.pic__content:hover{
+    opacity: 1;
+}
