@@ -13,14 +13,14 @@
     <div class="podbody">
         <div class="knopki">
             <div class="buttons">
-                <a href="#NW" class="vvod">Ввод</a>
-                <div class="vivod">Вывод</div>
+                <a href="#NW" id="newUser" class="vvod">Ввод</a>
+                <div id="output" class="vivod">Вывод</div>
             </div>
         </div>
         <div class="output">
             <div class="user__output">
                 <div class="user__title">Для юзеров</div>
-                <div class="user__text">
+                <div id="outputText" class="user__text">
                     1. % женщин : <br> 2. % мужчин : <br> 3. % высш. обр. : <br> 4. % сред. обр. : <br> 5. % нач. обр. :
                 </div>
             </div>
@@ -41,11 +41,11 @@
         <form class="form">
             <div class="radio-container">
                 <div class="form-item radio-btn nth-2">
-                <input type="radio" name="option1" id="radio1" checked>
+                <input type="radio" name="option1" value="1" id="radio1" checked>
                 <label for="radio1">Человек</label>
               </div>
                 <div class="form-item radio-btn nth-2">
-                <input type="radio" name="option1" id="radio2">
+                <input type="radio" name="option1" value="2" id="radio2">
                 <label for="radio2">Женщина</label>
               </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="pic__content"></div>
             </div>
         </div>
-        <a href="#" class="vvod2">Ввод</a>
+        <a href="#" id="getUser" class="vvod2">Ввод</a>
             </div>
         </div>
     </div>
