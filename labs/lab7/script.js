@@ -3,7 +3,13 @@ window.onload = () =>{
     let getUser = document.querySelector("#getUser");
     let output = document.querySelector("#output")
     let result = document.querySelector("#outputText")
+    let admResult = document.querySelector("#admOuput")
+
     let a = 0
+
+    let avrMen = 0
+
+    let spis = []
 
     let user = {
         "male" : "",
@@ -12,8 +18,16 @@ window.onload = () =>{
 
     let file ={}
 
+    let showUsers = (a) =>{
+        for(let i = 1; i<a+1;i++){
+            if(file[`${i}`]["male"] == 1){
+                console.log("da")
+            }
+        }
+    }
+
     vvod.onclick = () =>{
-        // ты эбобо??
+        // ты эбобо?? Нахуй иди у меня тут рубрика эксперементы
         // узерс не существует !!!
         //console.log(users)
 
@@ -35,10 +49,11 @@ window.onload = () =>{
 
             user = {}
             
+            b = 1
             document.cookie = JSON.stringify(file)//не верно чем ты слушал??
             // вот так, потом спрошу по поводу этого!!
             //document.cookie = `nameofelement=${JSON.stringify(file)}`
-            
+
         }
 
     }
@@ -54,12 +69,11 @@ window.onload = () =>{
         //     return matches ? decodeURIComponent(matches[1]) : undefined;
         // } 
         // c тебя розяснение кода и доработка ♪ пуш сегодня организуй и закрой эту лабу!!
-        let avrMen = 0
         let avrWom = 0
         let avrPrim = 0
         let avrMid = 0
         let avrHigh = 0
-        for (let i = 1; i==a;i++){
+        for (let i = 1; i<a+1;i++){
             if (users[`${i}`]["male"] == 1 ){
                 avrMen++
             } else {
@@ -82,6 +96,24 @@ window.onload = () =>{
         avrHigh = (avrHigh * 100) / a
         let result = document.querySelector("#outputText")
         result.innerHTML = `1. % женщин : ${avrWom}% <br> 2. % мужчин : ${avrMen}% <br> 3. % высш. обр. : ${avrHigh}% <br> 4. % сред. обр. : ${avrMid}% <br> 5. % нач. обр. : ${avrPrim}%`
+    }
+
+
+
+    document.onkeydown = (event) =>{
+        spis.push(event.code)
+
+        console.log(spis)
+        console.log(spis.length)
+
+        if (spis[0] == "AltLeft" && spis[1] =="KeyA"){
+            admResult.innerHTML = `Процент мужчин = ${avrMen}%`
+            console.log(avrMen)
+        }
+
+        if (spis[0] != "AltLeft" || spis.length > 3){
+            spis.length = 0
+        }
     }
 
 
