@@ -13,7 +13,9 @@ window.onload = () =>{
     let file ={}
 
     vvod.onclick = () =>{
-        console.log(users)
+        // ты эбобо??
+        // узерс не существует !!!
+        //console.log(users)
 
         getUser.onclick = () =>{
             let selectedGen = document.querySelector('input[name="option1"]:checked')
@@ -33,14 +35,25 @@ window.onload = () =>{
 
             user = {}
             
-            document.cookie = JSON.stringify(file)
+            document.cookie = JSON.stringify(file)//не верно чем ты слушал??
+            // вот так, потом спрошу по поводу этого!!
+            //document.cookie = `nameofelement=${JSON.stringify(file)}`
             
         }
 
     }
 
     output.onclick = () => {
-        let users = JSON.parse(document.cookie)
+        let users = JSON.parse(document.cookie)// тут тоже ошибка!!
+        // возвращает куки с указанным name,
+        // или undefined, если ничего не найдено
+        // function getCookie(name) {
+        //     let matches = document.cookie.match(new RegExp(
+        //     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        //     ));
+        //     return matches ? decodeURIComponent(matches[1]) : undefined;
+        // } 
+        // c тебя розяснение кода и доработка ♪ пуш сегодня организуй и закрой эту лабу!!
         let avrMen = 0
         let avrWom = 0
         let avrPrim = 0
