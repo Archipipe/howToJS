@@ -1,13 +1,12 @@
 window.onload = () =>{
-    let vvod = document.querySelector("#newUser");
-    let getUser = document.querySelector("#getUser");
-    let output = document.querySelector("#output")
-    let result = document.querySelector("#outputText")
-    let admResult = document.querySelector("#admOuput")
+    const vvod = document.querySelector("#newUser");
+    const getUser = document.querySelector("#getUser");
+    const output = document.querySelector("#output")
+    const result = document.querySelector("#outputText")
+    const admResult = document.querySelector("#admOuput")
 
     let a = 0
 
-    let avrMen = 0
 
     let spis = []
 
@@ -18,18 +17,13 @@ window.onload = () =>{
 
     let file ={}
 
-    let showUsers = (a) =>{
-        for(let i = 1; i<a+1;i++){
-            if(file[`${i}`]["male"] == 1){
-                console.log("da")
-            }
-        }
-    }
+
 
     vvod.onclick = () =>{
         // ты эбобо?? Нахуй иди у меня тут рубрика эксперементы
         // узерс не существует !!!
         //console.log(users)
+
 
         getUser.onclick = () =>{
             let selectedGen = document.querySelector('input[name="option1"]:checked')
@@ -49,7 +43,6 @@ window.onload = () =>{
 
             user = {}
             
-            b = 1
             document.cookie = JSON.stringify(file)//не верно чем ты слушал??
             // вот так, потом спрошу по поводу этого!!
             //document.cookie = `nameofelement=${JSON.stringify(file)}`
@@ -73,6 +66,7 @@ window.onload = () =>{
         let avrPrim = 0
         let avrMid = 0
         let avrHigh = 0
+        avrMen = 0
         for (let i = 1; i<a+1;i++){
             if (users[`${i}`]["male"] == 1 ){
                 avrMen++
@@ -89,6 +83,7 @@ window.onload = () =>{
             }
         }
 
+
         avrMen = (avrMen * 100) / a
         avrWom = (avrWom * 100) / a
         avrPrim = (avrPrim * 100) / a
@@ -103,16 +98,14 @@ window.onload = () =>{
     document.onkeydown = (event) =>{
         spis.push(event.code)
 
-        console.log(spis)
-        console.log(spis.length)
 
         if (spis[0] == "AltLeft" && spis[1] =="KeyA"){
             admResult.innerHTML = `Процент мужчин = ${avrMen}%`
-            console.log(avrMen)
         }
 
-        if (spis[0] != "AltLeft" || spis.length > 3){
+        if (spis[0] != "AltLeft" || spis.length == 2){ 
             spis.length = 0
+            console.log(spis)
         }
     }
 

@@ -19,11 +19,33 @@ body{
     padding: 15px;
     margin: 30px 20px 20px;
     width: 500px;
-    height: 250px;
+    min-height: 250px;
+    height: auto;
     border: 1px solid black;
     text-align: center;
     color: #e98f29;
     border-radius: 20px;
+}
+
+.vvod__btn{
+    background: rgb(70,215,202);
+    border: 1px solid black;
+    padding: 12px 28px;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: all .5s ease;
+}
+
+.vvod__btn:hover{
+    background: rgb(136,132,214);
+    color: rgba(255, 255, 255, 1);
+}
+
+.vvod__btn:focus{
+    outline: none;
 }
 
 .textnad{
