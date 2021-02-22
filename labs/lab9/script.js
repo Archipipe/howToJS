@@ -42,7 +42,10 @@ window.onload = () =>{
         if (file.name.match(isHTML) != null){
             reader.onload = function() {
                 console.log(reader.result);
-                // console.log(result.match())
+                const sas = document.querySelector(".sas")
+                sas.innerHTML = reader.result
+                a = sas.querySelectorAll("*").join()
+
                 console.log(`/--------------------------------------------------------/`)
             }
         }
