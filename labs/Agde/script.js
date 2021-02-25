@@ -1,55 +1,83 @@
 let ip = "mine.fulldroper.tk"
-let port = "1336"
+let port = "1338"
 let ws = new WebSocket(`ws://${ip}:${port}`)
-const pos = document.querySelector("#pol")
-const otpr = document.querySelector("#otpr")
-const vstep = document.querySelector("#vstep")
-const inut = document.querySelector("#inut")
-const sver = document.querySelector("#sver")
+const body = document.querySelector("body")
+
+const reg = document.querySelector("#reg")
+const regLog = document.querySelector("#login1")
+const regPas = document.querySelector("#password1")
+const log = document.querySelector("#log")
+
+const soob = document.querySelector("#vvesti")
+const send = document.querySelector("#send")
+
+const chat = document.querySelector("#chat")
+const get = document.querySelector("#get")
+
+const inputPhoto = document.querySelector('#photo')
+const kartinka = document.querySelector('#kartinka')
+
+const toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
 
 ws.onopen = () =>{
 
-    let i = 1200 ;
+    let photo
+    let result
+    let msg
+    let msgJSON
+    let tocken
+    let messages
     ws.onmessage = x =>{
-        let JSONparse = JSON.parse(x.data)
-         if (JSONparse.flag !== undefined){
-             clearInterval(inter)
-             console.log(JSONparse)
-             console.log(i-1)
+        result = JSON.parse(x.data)
+        console.log(result)  
+        if (result.tocken !== undefined) tocken = result.tocken;
+
+        if (result.chat !== undefined){
+            for(let i = 0; i < result.chat.length; i++) {
+                messages += `<p>${result.chat[i].img !== undefined ? `<img src= ${result.chat[i].img} width="30px" height="30px">` : ""}  <a>${result.chat[i].n} : </a>  ${result.chat[i].text} </p>`
+            }
+
+            chat.innerHTML = messages
         }
     }
 
-    pol.onclick = () => ws.send(JSON.stringify({"cmd":"getnum"}))
-
-    vstep.onclick = () => inut.value = inut.value**3
-
-    sver.onclick = () => {
-        if(inut.value == asa){
-            console.log("da")
-        }
+    reg.onclick = (e) =>{
+        msg = {"cmd" : "register", "username" : `${regLog.value}`, "password" : `${regPas.value}`}
+        msgJSON = JSON.stringify(msg)
+        ws.send(msgJSON)
+    }
+    
+    log.onclick = (e) =>{
+        msg = {"cmd" : "login", "username" : `${regLog.value}`, "password" : `${regPas.value}`}
+        msgJSON = JSON.stringify(msg)
+        ws.send(msgJSON)
     }
 
-    let msg = {"cmd":"getnum"}
-    ws.send(JSON.stringify(msg))
+    send.onclick = (e) =>{
+        msg = {"cmd" : "sendmsg", "tocken" : `${tocken}`, "value" : `${soob.value}`}
+        msgJSON = JSON.stringify(msg)
+        ws.send(msgJSON)
+        soob.value = ""
+    }
 
+    getchat = () =>{
+        messages =""
+        msg = {"cmd" : "getchat", "tocken" : `${tocken}`}
+        msgJSON = JSON.stringify(msg)
+        ws.send(msgJSON)
+    }
+    tocken !==undefined && setInterval(getchat, 500)
 
-
-
-
-
-    let inter = setInterval(() => {
-        ws.send(JSON.stringify({"cmd":"setnum", "num": `${i}`}))
-        i++
-        if (i >= 10000){
-            clearInterval(inter)
-        }
-
-        sver.onclick = () => {
-            clearInterval(inter)
-        }
-    },100)
-
-
-
+    //photo = toBase64(kartinka.src)
+    inputPhoto.onchange = () =>{
+        kartinka.src = window.URL.createObjectURL(inputPhoto.files[0])
+        photo = toBase64(inputPhoto.files[0])
+    }
 
 }
+ 

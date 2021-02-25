@@ -7,12 +7,43 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button id="pol">Получить</button>
-    <button id="otpr">Отправить</button>
-    <button id="vstep">Возвести</button>
-    <button id="sver">Cnjg</button>
-    <input id="inut" type="text">
+    <div class="things">
+
+        <div class="thing1">
+            <div class="reg">
+                <input id="login1" type="text">
+                <input id="password1" type="text">
+                <button id="reg">Регистрация</button>
+            </div>
+            <div class="log">
+                <button id="log">Логин</button>
+            </div>
+        </div>
+
+        <div class="thing2">
+            <div class="thing__item">
+                Выберите ваш аватар
+                <img id="kartinka" src="avatar.png" width="50px" height="50px" alt="">
+            </div>
+
+            <div class="thing__item">
+                <input id="photo" type="file">
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="chat">
+        <div class="text">Чат</div>
+            <div id="chat"></div>
+            <br>
+            Введите сообщение
+            <input id="vvesti" type="text">
+            <button id="send">Отправить</button>
+    </div>
 </body>
 </html>
