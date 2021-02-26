@@ -1,4 +1,4 @@
-p{
+/* p{
     margin: 5px;
     margin-bottom: 2px;
     color: #41C9B8;
@@ -31,7 +31,7 @@ body{
     flex-direction: column;
     justify-content: center;
     color: rgb(207, 207, 207);
-    max-width: 50%;
+    max-width: 30%;
 }
 
 #fif{
@@ -113,4 +113,148 @@ img{
 
 #send{
     width: 20%;
+} */
+
+/* Main */
+*,
+*:after,
+*:before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(65, 65, 65);
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(207, 207, 207);
+    max-width: 40%;
+}
+
+/* Login */
+.things{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.thing1{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px black solid;
+}
+
+.reg{
+    margin: 0 auto;
+}
+
+.reg>input{
+    width: 98.5%;
+}
+
+.reg>button{
+    margin-top: 2px;
+    width: 48%;
+}
+
+/* Avatar */
+
+.thing2{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+}
+
+
+.thing2__avatar{
+    margin: 5px ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.thing2__avatar2{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+/* Chat */
+.chat {
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#chat{
+    margin: 10px auto;
+    width: 80%;
+    height: 700px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(46, 46, 46);
+    text-align: left;
+    overflow: auto;
+}
+
+.choto{
+    transform: translateY(-5px);
+    margin: 0 auto;
+    width: 80%;
+}
+
+.choto>input{
+    width: 70%;
+}
+
+.choto>button{
+    width: 18%;
+}
+
+/* Messages */
+
+#chat>*{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#chat>*:first-child{
+    margin-top: 0;
+}
+
+#chat>*>img{
+    max-width: 100px;
+    border-radius: 20px;
+}
+
+#fif{
+    width: 30px;
+}
+
+.pkar{
+    float: left;
+}
+
+a{
+    color: #41C9B8;
+    margin-left: 5px;
+}
+
+#pa{
+    margin-left: 40px;
+    color: rgb(231, 146, 48);
+    font-style: italic;
+    margin-top: 3px;
 }
