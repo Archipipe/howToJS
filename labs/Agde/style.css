@@ -103,6 +103,7 @@ img{
 .choto{
     width: 100%;
     display: flex;
+    padding: 10px;
 }
 
 #vvesti{
