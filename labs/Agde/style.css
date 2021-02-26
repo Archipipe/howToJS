@@ -2,24 +2,47 @@ p{
     margin: 5px;
     margin-bottom: 2px;
     color: #41C9B8;
+    display: flex;
+}
+
+.pdiv{
+    display: flex;
+    position: relative;
+}
+
+.pkar{
+    float: left;
 }
 
 a{
-    color: #FFEC77;
-    margin-right: 5px;
+    color: #41C9B8;
+}
+
+#pa{
+    color: rgb(231, 146, 48);
+    font-style: italic;
+    margin-top: 3px;
 }
 
 body{
     background-color: rgb(65, 65, 65);
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     color: rgb(207, 207, 207);
+    max-width: 50%;
+}
+
+#fif{
+    width: 45px;
 }
 
 img{
     background: none;
-    margin: 5px;
+    margin: 0 5px;
+    max-width: 200px;
+    border-radius: 20px;
 }
 
 .reg, .log, .chat{
@@ -48,6 +71,16 @@ img{
     align-items: center;
 }
 
+.thing__ite{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat{
+    margin-top: 10px;
+    max-width: 500px;
+}
+
 #chat{
     min-width: 500px;
     min-height: 600px;
@@ -59,11 +92,24 @@ img{
     overflow: auto;
 }
 
-#chat>p{
-    display: flex;
-    align-items: center;
+#chat>*{
+    margin-top: 10px;
 }
 
 #chat>*>img{
     max-width: 100px;
+}
+
+.choto{
+    width: 100%;
+    display: flex;
+}
+
+#vvesti{
+    width: 80%;
+    margin: 0;
+}
+
+#send{
+    width: 20%;
 }

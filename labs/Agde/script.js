@@ -16,6 +16,7 @@ const get = document.querySelector("#get")
 
 const inputPhoto = document.querySelector('#photo')
 const kartinka = document.querySelector('#kartinka')
+const sendImg =  document.querySelector("#avatar")
 
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -37,9 +38,13 @@ ws.onopen = () =>{
         console.log(result)  
         if (result.tocken !== undefined) tocken = result.tocken;
 
+        if (result.img !== undefined) {
+            kartinka.src = result.img
+        }
+
         if (result.chat !== undefined){
             for(let i = 0; i < result.chat.length; i++) {
-                messages += `<p>${result.chat[i].img !== undefined ? `<img src= ${result.chat[i].img} width="30px" height="30px">` : ""}  <a>${result.chat[i].n} : </a>  ${result.chat[i].text} </p>`
+                messages += `<div class="pdiv">${result.chat[i].img !== undefined ? `<img class="pkar" src= ${result.chat[i].img} width="35 px" height="35px">` : `<a id="fif"></a>`} <div>  <a>${result.chat[i].n} </a> <br> <div id="pa">${result.chat[i].text}</div> </div> </div>`
             }
 
             chat.innerHTML = messages
@@ -71,12 +76,19 @@ ws.onopen = () =>{
         msgJSON = JSON.stringify(msg)
         ws.send(msgJSON)
     }
-    tocken !==undefined && setInterval(getchat, 500)
 
-    //photo = toBase64(kartinka.src)
+    setInterval(()=> tocken !== undefined && getchat(), 500);
+
     inputPhoto.onchange = () =>{
         kartinka.src = window.URL.createObjectURL(inputPhoto.files[0])
-        photo = toBase64(inputPhoto.files[0])
+        toBase64(inputPhoto.files[0])
+        .then(res => photo = res)
+    }
+
+    sendImg.onclick = () =>{
+        msg = {"cmd" : "setimg", "tocken" : `${tocken}`, "img" : `${photo}`}
+        msgJSON = JSON.stringify(msg)
+        ws.send(msgJSON)
     }
 
 }
